@@ -1,12 +1,5 @@
-import { set } from "mongoose";
 import React, { useEffect, useState, useContext } from "react";
-import { render } from "react-dom";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { navbarActions } from "../helpers";
 import { AuthContext } from "../context/auth";
@@ -24,7 +17,7 @@ const Navbar = () => {
         const path = pathname === "/" ? "home" : pathname.substr(1).toLowerCase();
         setCurrentPage(path);
         navbarActions().underline();
-    }, [currentPage, setCurrentPage])
+    }, [pathname, currentPage, setCurrentPage])
 
     const handle_click = (page) => {
         setCurrentPage(page);

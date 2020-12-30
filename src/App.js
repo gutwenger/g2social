@@ -1,13 +1,11 @@
 import React from "react";
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
-    Link
   } from "react-router-dom";
 import './App.css';
 
-import { AuthContext, AuthProvider } from "./context/auth";
+import { AuthProvider } from "./context/auth";
 
 import Home from "./pages/Home";
 import Register from "./pages/Register";

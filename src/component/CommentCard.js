@@ -11,14 +11,6 @@ const CommentCard = (props) => {
     const adminId = "5fe59a8218d0de5001587e43";
     const { user } = useContext(AuthContext);
 
-    const handle_like = () => {
-        console.log("like_post");
-    }
-
-    const handle_comment = () => {
-        console.log("comment");
-    }
-
     return (
         <div className="postcard postcard-comment">
             <div className="postcard-body">

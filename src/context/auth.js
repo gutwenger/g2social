@@ -35,7 +35,7 @@ function authReducer(state, action) {
             };
         case "LOGOUT":
             return {
-                ... state,
+                ...state,
                 user: null
             }
         default:

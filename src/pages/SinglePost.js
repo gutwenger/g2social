@@ -1,15 +1,11 @@
 import React, { useState, useContext } from "react";
 import { gql, useQuery, useMutation } from "@apollo/client";
-import moment from "moment";
 
-import Modal from "../component/Modal";
 import PostCard from "../component/PostCard";
 import CommentCard from "../component/CommentCard";
 import { AuthContext } from "../context/auth";
 
 const SinglePost = (props) => {
-
-    const [confirmOpen, setConfirmOpen] = useState(false);
 
     const { user } = useContext(AuthContext);
 
@@ -55,7 +51,6 @@ const SinglePost = (props) => {
                         key={post.id}
                         post={post}
                         comment={false}
-                        setConfirmOpen={setConfirmOpen}
                         deletePostCallback={deletePostCallback}
                     />
                     {user && (
@@ -86,7 +81,6 @@ const SinglePost = (props) => {
                             key={comment.id}
                             postId={post.id}
                             comment={comment}
-                            setConfirmOpen={setConfirmOpen}
                             deletePostCallback={deletePostCallback}
                         />
                     ))}

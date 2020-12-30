@@ -1,13 +1,11 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useQuery } from "@apollo/client";
-import gql from "graphql-tag";
 
 import { AuthContext } from "../context/auth";
 import PostCard from "../component/PostCard";
 import PostForm from "../component/PostForm";
 import { FETCH_POSTS_QUERY } from "../util/graphQL";
 import { navbarActions } from "../helpers";
-import Modal from '../component/Modal';
 
 const Home = () => {
 

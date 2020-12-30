@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
-import { g2DateFormat } from "../helpers";
 import moment from "moment";
 
 import { AuthContext } from "../context/auth";
@@ -12,14 +11,6 @@ const PostCard = (props) => {
     
     const adminId = "5fe59a8218d0de5001587e43";
     const { user } = useContext(AuthContext);
-
-    const handle_like = () => {
-        console.log("like_post");
-    }
-
-    const handle_comment = () => {
-        console.log("comment");
-    }
 
     return (
         <div className="postcard">
@@ -41,13 +32,13 @@ const PostCard = (props) => {
                 />
                 {props.comment ? (
                     <Link to={`posts/${id}`}>
-                        <button className="postcard-btn" onClick={()=>handle_comment()}>
+                        <button className="postcard-btn">
                             <i className="far fa-comments postcard-btn-icon"></i>
                             <p className="postcard-btn-num">{commentCount}</p>
                         </button>
                     </Link>
                 ) : (
-                    <button className="postcard-btn" onClick={()=>handle_comment()}>
+                    <button className="postcard-btn">
                         <i className="far fa-comments postcard-btn-icon"></i>
                         <p className="postcard-btn-num">{commentCount}</p>
                     </button>
