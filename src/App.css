@@ -1,0 +1,666 @@
+*, html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar {
+  position: fixed;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.Navbar .navbar-link {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #ffffff;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+}
+.Navbar .navbar-link .navbarP {
+  padding: 0 20px;
+  padding-top: 20px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.Navbar .navbar-link-active {
+  background-color: magenta;
+  border-collapse: collapse;
+  transition: 0.3s;
+}
+.Navbar .navbar-link-active .navbarP {
+  font-weight: 600;
+  color: white;
+}
+
+.container {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fffffa;
+}
+.container .containerH1 {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  background: #000000;
+  color: #ffffff;
+}
+.container .home {
+  box-sizing: border-box;
+  height: fit-content;
+  max-height: 100%;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  overflow-y: scroll;
+}
+.container .home .home-comment {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+.container .singlePost {
+  box-sizing: border-box;
+  height: fit-content;
+  max-height: 100%;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.container .form-01 {
+  box-sizing: border-box;
+  height: fit-content;
+  max-height: 100%;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  display: grid;
+}
+.container .form-01 .form-01-loading-icon-con {
+  display: none;
+}
+.container .form-01 .form-01-grp {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .form-01 .form-01-grp .form-01-grp-label {
+  font-size: 15px;
+  font-weight: 300;
+}
+.container .form-01 .form-01-grp .form-01-grp-input {
+  box-sizing: border-box;
+  height: 35px;
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  background-color: transparent;
+}
+.container .form-01 .form-01-grp-error .form-01-grp-label {
+  color: red;
+}
+.container .form-01 .form-01-grp-error .form-01-grp-input {
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.container .form-01 .form-01-submit-btn {
+  box-sizing: border-box;
+  height: 39.5px;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  border: 1px solid magenta;
+  color: magenta;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.container .form-01 .form-01-submit-btn:hover {
+  box-shadow: inset 350px 0px 0px magenta;
+  color: white;
+  transition: 0.5s;
+}
+.container .form-01 .form-01-error {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.container .form-01 .form-01-error .form-01-error-list {
+  list-style-position: inside;
+}
+.container .form-01 .form-01-error .form-01-error-list .form-01-error-list-li {
+  margin-top: 5px;
+  font-size: 12px;
+  color: red;
+}
+.container .form-01 .form-01-error .form-01-error-list .form-01-error-list-li:first-child {
+  margin-top: 0;
+}
+.container .form-01-loading .form-01-loading-icon-con {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  margin: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .form-01-loading .form-01-loading-icon-con .form-01-loading-icon {
+  font-size: 30px;
+  color: gray;
+  animation: 1.5s spinning infinite linear;
+}
+.container .form-01-loading .form-01-grp, .container .form-01-loading .form-01-submit-btn, .container .form-01-loading .form-01-error {
+  display: none;
+}
+.container .form-02 {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.5s;
+}
+.container .form-02 .form-02-title {
+  font-size: 25px;
+  font-weight: 600;
+  transition: 0.5s;
+}
+.container .form-02 .form-02-input {
+  outline: none;
+  box-sizing: border-box;
+  height: 39px;
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  transition: 0.5s;
+}
+.container .form-02 .form-02-input-error {
+  border: 1px solid #ff000050;
+  background-color: #ff000006;
+}
+.container .form-02 .form-02-submit {
+  box-sizing: border-box;
+  float: right;
+  height: 35px;
+  width: 90px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  background-color: transparent;
+  font-weight: 600;
+  color: darkgray;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.container .form-02 .form-02-submit:hover {
+  background-color: white;
+  color: magenta;
+  transition: 0.5s;
+}
+.container .form-02:hover {
+  border: 1px solid magenta;
+  background-color: #ffffff;
+  color: white;
+  transition: 0.5s;
+}
+.container .form-02:hover .form-02-title {
+  color: black;
+  transition: 0.5s;
+}
+.container .form-02:hover .form-02-input {
+  border: 1px solid magenta;
+  background-color: transparent;
+  transition: 0.5s;
+}
+.container .form-02:hover .form-02-input-error {
+  border: 1px solid #ff000050;
+  background-color: #ff000006;
+}
+.container .form-02:hover .form-02-submit {
+  border: 1px solid magenta;
+  background-color: transparent;
+  color: magenta;
+  transition: 0.5s;
+}
+.container .form-02:hover .form-02-submit:hover {
+  border: 1px solid magenta;
+  background-color: magenta;
+  color: white;
+  transition: 0.5s;
+}
+.container .form-02-error {
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ff000050;
+  background-color: #ff000006;
+  list-style-position: inside;
+}
+.container .form-02-error .form-02-error-p {
+  font-size: 11px;
+  color: #ff000090;
+}
+
+.postcard {
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  transition: 0.5s;
+  animation: 0.5s appearing forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.postcard a {
+  text-decoration: none;
+}
+.postcard .postcard-body {
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+.postcard .postcard-body .postcard-header {
+  font-size: 15px;
+  font-weight: 700;
+}
+.postcard .postcard-body .postcard-createdAt {
+  font-size: 13px;
+  color: darkgray;
+  transition: 0.5s;
+}
+.postcard .postcard-body .postcard-content {
+  box-sizing: border-box;
+  margin: 10px 0;
+  font-size: 15px;
+}
+.postcard .postcard-btns {
+  box-sizing: border-box;
+  padding-top: 7px;
+  border-top: 1px solid lightgray;
+  display: flex;
+  position: relative;
+}
+.postcard .postcard-btns .postcard-btn {
+  box-sizing: border-box;
+  height: 30px;
+  width: 70px;
+  margin-right: 5px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.postcard .postcard-btns .postcard-btn .postcard-btn-icon {
+  box-sizing: border-box;
+  height: 100%;
+  width: 50px;
+  padding-right: 5px;
+  border: none;
+  border-right: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: lightgray;
+  transition: 0.5s;
+}
+.postcard .postcard-btns .postcard-btn .postcard-btn-icon:hover {
+  background-color: magenta;
+  color: white;
+  transition: 0.5s;
+}
+.postcard .postcard-btns .postcard-btn .postcard-btn-icon-active {
+  background-color: lightgray;
+  color: white;
+}
+.postcard .postcard-btns .postcard-btn .postcard-btn-icon-active:hover {
+  background-color: magenta;
+  color: white;
+}
+.postcard .postcard-btns .postcard-btn .postcard-btn-num {
+  box-sizing: border-box;
+  height: 100%;
+  width: 30px;
+  border-left: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkgray;
+  position: relative;
+  transition: 0.5s;
+}
+.postcard .postcard-btns .postcard-btn .postcard-btn-num::after {
+  position: absolute;
+  left: -5px;
+  content: "";
+  height: 8px;
+  width: 8px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-color: lightgray;
+  transform: rotate(315deg);
+  background-color: #fffffa;
+  transition: 0.5s;
+}
+.postcard .postcard-btns .postcard-btn-right {
+  position: absolute;
+  right: 0;
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  border-radius: 3px;
+  border: 1px solid red;
+  background-color: transparent;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.postcard .postcard-btns .postcard-btn-right:hover {
+  background-color: red;
+  color: white;
+  transition: 0.5s;
+}
+
+.postcard:hover {
+  background-color: #ffffff;
+  border: 1px solid magenta;
+  transition: 0.5s;
+}
+.postcard:hover .postcard-createdAt {
+  color: magenta;
+  transition: 0.5s;
+}
+.postcard:hover .postcard-btns {
+  border-top: 1px solid magenta;
+}
+.postcard:hover .postcard-btns .postcard-btn {
+  border: 1px solid magenta;
+}
+.postcard:hover .postcard-btns .postcard-btn .postcard-btn-icon {
+  color: magenta;
+}
+.postcard:hover .postcard-btns .postcard-btn .postcard-btn-icon:hover {
+  color: #fffffa;
+}
+.postcard:hover .postcard-btns .postcard-btn .postcard-btn-icon-active {
+  background-color: magenta;
+  color: white;
+}
+.postcard:hover .postcard-btns .postcard-btn .postcard-btn-icon-active:hover {
+  background-color: #ffffff;
+  color: magenta;
+}
+.postcard:hover .postcard-btns .postcard-btn .postcard-btn-num {
+  color: magenta;
+  transition: 0.5s;
+  border-left: 1px solid magenta;
+}
+.postcard:hover .postcard-btns .postcard-btn .postcard-btn-num::after {
+  background-color: #ffffff;
+  border-color: magenta;
+}
+.postcard:hover .postcard-btns .confirm-delete .confirm-delete-overlay .confirm-delete-box .confirm-delete-box-p {
+  color: #ff00ff;
+}
+
+.postcard-comment {
+  margin-top: 10px;
+  position: relative;
+}
+.postcard-comment .postcard-comment-btns {
+  position: absolute;
+  box-sizing: border-box;
+  top: 10px;
+  right: 10px;
+  height: 80%;
+  width: 96%;
+  border-top: none;
+  padding: 0;
+}
+.postcard-comment .postcard-comment-btns .confirm-delete {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.postcard-comment .postcard-comment-btns .confirm-delete .confirm-delete-overlay {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.postcard-comment .postcard-comment-btns .confirm-delete .confirm-delete-overlay .confirm-delete-box {
+  padding: 0;
+}
+.postcard-comment:hover .postcard-comment-btns {
+  border-top: none;
+}
+
+.confirm-delete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1010;
+}
+.confirm-delete .confirm-delete-overlay {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  z-index: 1010;
+}
+.confirm-delete .confirm-delete-overlay .confirm-delete-box {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding-top: 8px;
+  background-color: #fffffa;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1010;
+}
+.confirm-delete .confirm-delete-overlay .confirm-delete-box .confirm-delete-box-p {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: darkgray;
+}
+.confirm-delete .confirm-delete-overlay .confirm-delete-box .confirm-delete-box-btns {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.confirm-delete .confirm-delete-overlay .confirm-delete-box .confirm-delete-box-btns .confirm-delete-box-btn {
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+  padding-top: 3px;
+  border-radius: 3px;
+  border: 1px solid #fca311;
+  font-size: 18px;
+  background-color: transparent;
+  color: #fca311;
+  cursor: pointer;
+}
+.confirm-delete .confirm-delete-overlay .confirm-delete-box .confirm-delete-box-btns .confirm-delete-box-btn:hover {
+  background-color: #fca311;
+  color: black;
+}
+.confirm-delete .confirm-delete-overlay .confirm-delete-box .confirm-delete-box-btns .confirm-delete-box-btn-delete {
+  border: 1px solid #ff00ff;
+  color: #ff00ff;
+}
+.confirm-delete .confirm-delete-overlay .confirm-delete-box .confirm-delete-box-btns .confirm-delete-box-btn-delete:hover {
+  background-color: #ff00ff;
+  color: white;
+}
+
+.singlePost-comment {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  transition: 0.5s;
+}
+.singlePost-comment .singlePost-comment-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.singlePost-comment .singlePost-comment-form {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.singlePost-comment .singlePost-comment-form .singlePost-comment-input {
+  outline: magenta;
+  box-sizing: border-box;
+  height: 30px;
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 3px 0 0 3px;
+  border: 1px solid lightgray;
+}
+.singlePost-comment .singlePost-comment-form .singlePost-comment-input:hover, .singlePost-comment .singlePost-comment-form .singlePost-comment-input:focus {
+  border: 1px solid magenta;
+}
+.singlePost-comment .singlePost-comment-form .singlePost-comment-submit {
+  box-sizing: border-box;
+  height: 30px;
+  width: 85px;
+  border-radius: 0 3px 3px 0;
+  border: 1px solid lightgray;
+  background-color: lightgray;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.singlePost-comment .singlePost-comment-form .singlePost-comment-submit:hover {
+  background-color: magenta;
+  color: magenta;
+}
+
+.singlePost-comment:hover, .singlePost-comment:focus-within {
+  border: 1px solid magenta;
+  background-color: #ffffff;
+  transition: 0.5s;
+}
+.singlePost-comment:hover .singlePost-comment-form .singlePost-comment-input, .singlePost-comment:focus-within .singlePost-comment-form .singlePost-comment-input {
+  outline: magenta;
+  border: 1px solid magenta;
+}
+.singlePost-comment:hover .singlePost-comment-form .singlePost-comment-submit, .singlePost-comment:focus-within .singlePost-comment-form .singlePost-comment-submit {
+  border: 1px solid magenta;
+  background-color: magenta;
+  color: white;
+}
+
+@media only screen and (max-width: 750px) {
+  .container .home {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .container .home .home-comment {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .container .home {
+    grid-template-columns: 1fr;
+  }
+  .container .home .home-comment {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+@keyframes appearing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=App.css.map */
