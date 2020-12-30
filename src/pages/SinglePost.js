@@ -13,7 +13,7 @@ const SinglePost = (props) => {
 
     const postId = props.match.params.postId;
 
-    const { data } = useQuery(FETCH_POST_QUERY, {
+    const { data, loading } = useQuery(FETCH_POST_QUERY, {
         variables: {
             postId
         }
@@ -47,12 +47,17 @@ const SinglePost = (props) => {
         postMarkup = (
             <div className="container">
                 <div className="singlePost">
-                    <PostCard 
-                        key={post.id}
-                        post={post}
-                        comment={false}
-                        deletePostCallback={deletePostCallback}
-                    />
+                    {loading 
+                        ? <h1>Loading...</h1>
+                        : (
+                            <PostCard 
+                                key={post.id}
+                                post={post}
+                                comment={false}
+                                deletePostCallback={deletePostCallback}
+                            />
+                        )
+                    }
                     {user && (
                         <div className="singlePost-comment">
                             <p className="singlePost-comment-title">Post a comment</p>
@@ -76,14 +81,17 @@ const SinglePost = (props) => {
                             </form>
                         </div>
                     )}
-                    {post.comments.map(comment => (
-                        <CommentCard 
-                            key={comment.id}
-                            postId={post.id}
-                            comment={comment}
-                            deletePostCallback={deletePostCallback}
-                        />
-                    ))}
+                    {loading 
+                        ? <h1>Loading...</h1>
+                        : post.comments.map(comment => (
+                                <CommentCard 
+                                    key={comment.id}
+                                    postId={post.id}
+                                    comment={comment}
+                                    deletePostCallback={deletePostCallback}
+                                />
+                            ))
+                    }
                 </div>
             </div>
         )
