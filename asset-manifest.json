@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/g2social/static/css/main.faca9e85.chunk.css",
+    "main.js": "/g2social/static/js/main.c20c4aa0.chunk.js",
+    "main.js.map": "/g2social/static/js/main.c20c4aa0.chunk.js.map",
+    "runtime-main.js": "/g2social/static/js/runtime-main.9e3c9caf.js",
+    "runtime-main.js.map": "/g2social/static/js/runtime-main.9e3c9caf.js.map",
+    "static/js/2.1c55f4bc.chunk.js": "/g2social/static/js/2.1c55f4bc.chunk.js",
+    "static/js/2.1c55f4bc.chunk.js.map": "/g2social/static/js/2.1c55f4bc.chunk.js.map",
+    "static/js/3.cde4a834.chunk.js": "/g2social/static/js/3.cde4a834.chunk.js",
+    "static/js/3.cde4a834.chunk.js.map": "/g2social/static/js/3.cde4a834.chunk.js.map",
+    "index.html": "/g2social/index.html",
+    "static/css/main.faca9e85.chunk.css.map": "/g2social/static/css/main.faca9e85.chunk.css.map",
+    "static/js/2.1c55f4bc.chunk.js.LICENSE.txt": "/g2social/static/js/2.1c55f4bc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9e3c9caf.js",
+    "static/js/2.1c55f4bc.chunk.js",
+    "static/css/main.faca9e85.chunk.css",
+    "static/js/main.c20c4aa0.chunk.js"
+  ]
+}
