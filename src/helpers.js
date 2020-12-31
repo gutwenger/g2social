@@ -125,12 +125,10 @@ export const g2DateFormat = (output=String, seperator=String, input=0, timezone_
 };
 
 export const navbarActions = () => {
-    let pathname = window.location.pathname;
+    let pathname = window.location.pathname.substring(9);
     const path = pathname === "/" || pathname.substring(1).slice(0,5) === "posts"
         ? "home"
         : pathname.substr(1).toLowerCase();
-
-
 
     const underline = () => {
         document.querySelectorAll(".navbar-link").forEach(link => {
